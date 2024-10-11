@@ -13,7 +13,6 @@ const BaseLayout: React.FunctionComponent<IBaseLayoutProps> = ({ children }) => 
       <Header />
       {children}
       <Footer />
-      <ScrollToTop smooth component={<IconBxChevronUp className='text-white bg-secondary rounded-full' />} />
     </main>
   )
 }
