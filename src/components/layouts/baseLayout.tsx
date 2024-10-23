@@ -1,7 +1,5 @@
-import IconBxChevronUp from '@/assets/icons/chevUp'
 import Footer from '@/components/layouts/Footer'
 import Header from '@/components/layouts/header'
-import ScrollToTop from 'react-scroll-to-top'
 
 interface IBaseLayoutProps {
   children: React.ReactNode
@@ -9,7 +7,7 @@ interface IBaseLayoutProps {
 
 const BaseLayout: React.FunctionComponent<IBaseLayoutProps> = ({ children }) => {
   return (
-    <main className='font-proxima min-h-screen w-full  text-light'>
+    <main className='font-proxima text-light min-h-screen w-full'>
       <Header />
       {children}
       <Footer />

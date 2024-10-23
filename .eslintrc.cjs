@@ -5,33 +5,42 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
-    'plugin:prettier/recommended',
-    
+    'plugin:prettier/recommended'
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh', 'prettier'],
+  plugins: ['react-refresh', 'prettier', 'tailwindcss', 'unused-imports'],
   rules: {
     'react-refresh/only-export-components': [
       'warn',
-      { allowConstantExport: true },
+      { allowConstantExport: true }
     ],
+    'unused-imports/no-unused-imports': 'error',
+    'unused-imports/no-unused-vars': 'error',
     'semi': ['error', 'never'],
     'prettier/prettier': [
       'error',
       {
-        arrowParens: "always",
+        arrowParens: 'always',
         semi: false,
-        trailingComma: "none",
+        trailingComma: 'none',
         tabWidth: 2,
-        endOfLine: "auto",
+        endOfLine: 'auto',
         useTabs: false,
         singleQuote: true,
         printWidth: 120,
-        jsxSingleQuote: true
-      },
-      
-
-    ],
+        jsxSingleQuote: true,
+        plugins: [
+          'prettier-plugin-tailwindcss',
+          '@ianvs/prettier-plugin-sort-imports'
+        ]
+      }
+    ]
   },
+  settings: {
+    tailwindcss: {
+      callees: ['cn'],
+      config: './tailwind.config.js'
+    }
+  }
 }
